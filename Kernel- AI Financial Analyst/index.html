@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kernel - AI Financial Analyst</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Kernel</p>
+        <h1>AI Financial Analyst Dashboard</h1>
+        <p class="lede">
+          Multi-stock market data, portfolio analytics, DSPy reasoning chains, conversational queries,
+          optimization-style weight suggestions, and automated PDF reports.
+        </p>
+      </div>
+      <div class="status-card">
+        <span>Insight engine</span>
+        <strong>{% if result %}{{ result.analysis.mode }}{% else %}Ready{% endif %}</strong>
+      </div>
+    </section>
+
+    <form method="post" class="panel form-panel">
+      <div class="field">
+        <label for="tickers">Tickers</label>
+        <input id="tickers" name="tickers" value="{{ tickers }}" placeholder="AAPL, MSFT, GOOGL" required>
+      </div>
+      <div class="field">
+        <label for="weights">Portfolio weights</label>
+        <input id="weights" name="weights" value="{{ weights }}" placeholder="40, 35, 25">
+      </div>
+      <div class="field wide">
+        <label for="question">Ask Kernel</label>
+        <textarea id="question" name="question" rows="4">{{ question }}</textarea>
+      </div>
+      <button type="submit">Analyze Portfolio</button>
+    </form>
+
+    {% if error %}
+      <section class="alert">{{ error }}</section>
+    {% endif %}
+
+    {% if result %}
+      <section class="metrics">
+        <article class="metric">
+          <span>Annual Return</span>
+          <strong>{{ result.metrics.annual_return_text }}</strong>
+        </article>
+        <article class="metric">
+          <span>Annual Volatility</span>
+          <strong>{{ result.metrics.annual_volatility_text }}</strong>
+        </article>
+        <article class="metric">
+          <span>Sharpe Proxy</span>
+          <strong>{{ result.metrics.sharpe_text }}</strong>
+        </article>
+        <article class="metric">
+          <span>Max Drawdown</span>
+          <strong>{{ result.metrics.max_drawdown_text }}</strong>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>AI Executive Summary</h2>
+          <p>{{ result.analysis.executive_summary }}</p>
+        </article>
+        <article class="panel">
+          <h2>Portfolio View</h2>
+          <p>{{ result.analysis.portfolio_view }}</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Stock Dashboard</h2>
+          <form method="post" action="{{ url_for('report') }}">
+            <input type="hidden" name="tickers" value="{{ tickers }}">
+            <input type="hidden" name="weights" value="{{ weights }}">
+            <input type="hidden" name="question" value="{{ question }}">
+            <button class="secondary" type="submit">Download PDF Report</button>
+          </form>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Weight</th>
+                <th>Price</th>
+                <th>1Y Return</th>
+                <th>Volatility</th>
+                <th>Max DD</th>
+                <th>P/E</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in result.snapshots %}
+                <tr>
+                  <td>
+                    <b>{{ row.ticker }}</b>
+                    <span>{{ row.company_name }}</span>
+                  </td>
+                  <td>{{ row.weight_text }}</td>
+                  <td>{{ row.current_price_text }}</td>
+                  <td>{{ row.one_year_return_text }}</td>
+                  <td>{{ row.volatility_text }}</td>
+                  <td>{{ row.max_drawdown_text }}</td>
+                  <td>{{ row.pe_ratio_text }}</td>
+                  <td>{{ row.trend }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Market Read</h2>
+          <p>{{ result.analysis.market_read }}</p>
+        </article>
+        <article class="panel">
+          <h2>Educational Recommendations</h2>
+          <p>{{ result.analysis.recommendations }}</p>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Risk-Balanced Weights</h2>
+          <p class="muted">Inverse-volatility allocation. Lower-volatility names receive larger suggested weights.</p>
+          <div class="weight-list">
+            {% for item in result.metrics.suggested_weights %}
+              <div><b>{{ item.ticker }}</b><span>{{ item.weight_text }}</span></div>
+            {% endfor %}
+          </div>
+        </article>
+        <article class="panel">
+          <h2>Momentum-Tilted Weights</h2>
+          <p class="muted">Positive one-year return divided by volatility. Educational, not a recommendation.</p>
+          <div class="weight-list">
+            {% for item in result.metrics.momentum_weights %}
+              <div><b>{{ item.ticker }}</b><span>{{ item.weight_text }}</span></div>
+            {% endfor %}
+          </div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Correlation Matrix</h2>
+        <div class="table-wrap compact">
+          {{ result.metrics.correlation.to_html(classes="corr-table") | safe }}
+        </div>
+      </section>
+
+      <section class="grid">
+        {% for row in result.snapshots %}
+          <article class="panel">
+            <h2>{{ row.ticker }} Microstructure Proxy</h2>
+            <p><b>Sector:</b> {{ row.sector }}</p>
+            <p><b>Industry:</b> {{ row.industry }}</p>
+            <p><b>Market cap:</b> {{ row.market_cap_text }}</p>
+            <p><b>Latest volume:</b> {{ row.latest_volume_text }}</p>
+            <p><b>30-day average volume:</b> {{ row.avg_volume_text }}</p>
+            <p><b>50D / 200D SMA:</b> {{ row.sma_50_text }} / {{ row.sma_200_text }}</p>
+          </article>
+        {% endfor %}
+      </section>
+
+      <section class="panel note">
+        <h2>Caveats</h2>
+        <p>{{ result.analysis.caveats }}</p>
+        <p><b>Disclaimer:</b> Kernel is an educational portfolio project, not financial advice.</p>
+      </section>
+    {% endif %}
+  </main>
+</body>
+</html>
