@@ -41,3 +41,29 @@ Binary classification on the Titanic dataset. Features systematic missing-value 
 Regression task predicting engine size from vehicle attributes. Conducted thorough EDA (distributions, correlations, outliers). Applied Label Encoding and One-Hot Encoding based on feature cardinality. Evaluated with RMSE and R².
 
 **Key skills:** Regression · Encoding strategies · EDA · Feature selection
+
+
+## 🧠 Perceptron from Scratch
+
+**Tech:** Python · NumPy · Neural Networks Fundamentals
+
+Built a binary classification perceptron entirely from scratch using NumPy, implementing forward propagation, weight updates, and activation logic without ML libraries. Demonstrates the mathematical foundations of neural networks, linear decision boundaries, and gradient-based learning through iterative training and visualisation of convergence behaviour.
+
+**Key skills:** Python · Deep Learning · ANN · Backpropogation
+
+
+📈 Time Series Analysis
+
+**Tech:** Python · Pandas · Matplotlib · Statsmodels
+
+Performed exploratory and statistical time series analysis on sequential data, including trend and seasonality decomposition, rolling statistics, stationarity testing, and forecasting techniques to uncover temporal patterns and generate predictive insights.
+
+**Key skills:** Python · Time Series · Statistics
+
+
+## Descriptions for other interesting projects
+- PCA Dimensionality Reduction — Applied Principal Component Analysis to reduce feature dimensionality while preserving maximum variance for improved visualisation and model efficiency.
+- GridSearchCV — Demonstrated systematic hyperparameter optimisation using GridSearchCV to improve model performance through cross-validated tuning.
+- Insurance Charge Prediction — Built a regression model to predict medical insurance charges using demographic and lifestyle attributes with detailed EDA and feature engineering.
+- NLP with ML — Implemented a traditional machine learning NLP pipeline using text preprocessing, vectorisation, and classification techniques for textual data analysis.
+- K-Means Clustering — Applied unsupervised K-Means clustering to identify hidden patterns and segment data points based on feature similarity.
