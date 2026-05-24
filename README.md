@@ -7,16 +7,6 @@ A portfolio of end-to-end machine learning projects spanning supervised learning
 
 ---
 
-## 🫀 Heart Stroke Risk Prediction with Deployment
-**Tech:** Python · KNN · Decision Trees · SVM · Streamlit · Scikit-Learn
-
-Predicts stroke risk from patient health metrics using three classifiers (KNN, Decision Tree, SVM), with systematic comparison via cross-validated grid search. Handles class imbalance through resampling. Evaluated with ROC-AUC, precision, recall, and F1-score to minimise false negatives in a clinical context. Deployed as an interactive Streamlit web app for real-time predictions.
-
-**Key skills:** Classification · Hyperparameter tuning · Class imbalance · Deployment  
-**[Live App →](http://127.0.0.1:8501/)**
-
----
-
 ## ⚙️ Gradient Descent from Scratch
 **Tech:** Python · NumPy · Optimisation Theory
 
@@ -59,17 +49,6 @@ Built a binary classification perceptron entirely from scratch using NumPy, impl
 Performed exploratory and statistical time series analysis on sequential data, including trend and seasonality decomposition, rolling statistics, stationarity testing, and forecasting techniques to uncover temporal patterns and generate predictive insights.
 
 **Key skills:** Python · Time Series · Statistics
-
-
-## 📈 Kernel — AI Financial Analyst Dashboard  
-**Tech:** Python · Flask · DSPy · OpenAI · yfinance · pandas · ReportLab
-
-Analyzes public stock tickers and portfolios using live market data, financial metrics, and AI-generated insights. Retrieves one-year price history, computes return, volatility, Sharpe proxy, drawdown, moving averages, correlation, valuation ratios, and portfolio concentration. Uses DSPy reasoning chains with OpenAI to generate structured analyst-style summaries, market reads, risk commentary, and educational recommendations. Includes portfolio weight analysis, risk-balanced allocation suggestions, momentum-tilted weights, conversational financial queries, and automated PDF report generation.
-
-**Key skills:**  Financial analytics · Flask deployment · DSPy · LLM reasoning · Portfolio analysis · PDF reporting
-
-**Live App → (http://127.0.0.1:5000/)**
-
 
 ## Descriptions for other interesting projects
 - PCA Dimensionality Reduction — Applied Principal Component Analysis to reduce feature dimensionality while preserving maximum variance for improved visualisation and model efficiency.
