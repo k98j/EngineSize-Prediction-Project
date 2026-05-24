@@ -61,6 +61,16 @@ Performed exploratory and statistical time series analysis on sequential data, i
 **Key skills:** Python · Time Series · Statistics
 
 
+## 📈 Kernel — AI Financial Analyst Dashboard  
+**Tech:** Python · Flask · DSPy · OpenAI · yfinance · pandas · ReportLab
+
+Analyzes public stock tickers and portfolios using live market data, financial metrics, and AI-generated insights. Retrieves one-year price history, computes return, volatility, Sharpe proxy, drawdown, moving averages, correlation, valuation ratios, and portfolio concentration. Uses DSPy reasoning chains with OpenAI to generate structured analyst-style summaries, market reads, risk commentary, and educational recommendations. Includes portfolio weight analysis, risk-balanced allocation suggestions, momentum-tilted weights, conversational financial queries, and automated PDF report generation.
+
+**Key skills:**  Financial analytics · Flask deployment · DSPy · LLM reasoning · Portfolio analysis · PDF reporting
+
+**Live App → (http://127.0.0.1:5000/)**
+
+
 ## Descriptions for other interesting projects
 - PCA Dimensionality Reduction — Applied Principal Component Analysis to reduce feature dimensionality while preserving maximum variance for improved visualisation and model efficiency.
 - GridSearchCV — Demonstrated systematic hyperparameter optimisation using GridSearchCV to improve model performance through cross-validated tuning.
