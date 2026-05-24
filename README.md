@@ -52,7 +52,7 @@ Built a binary classification perceptron entirely from scratch using NumPy, impl
 **Key skills:** Python · Deep Learning · ANN · Backpropogation
 
 
-📈 Time Series Analysis
+## 📈 Time Series Analysis
 
 **Tech:** Python · Pandas · Matplotlib · Statsmodels
 
