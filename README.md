@@ -37,6 +37,7 @@ Demonstrated systematic hyperparameter optimization using GridSearchCV to optimi
 
 Key skills: Hyperparameter Tuning · Cross-Validation · Model Selection
 
+
 ## 🏥 Medicine Insurance Charge Prediction
 **Tech:** Python · Pandas · Seaborn · Scikit-Learn
 
@@ -52,9 +53,8 @@ Binary classification on the Titanic dataset. Features systematic missing-value 
 
 **Key skills:** Binary classification · Feature engineering · EDA · Model evaluation
 
----
 
-## 🚗 Ford Car Engine Size Prediction
+## 🚗 Engine Size Prediction
 **Tech:** Python · Linear Regression · Feature Engineering · EDA
 
 Regression task predicting engine size from vehicle attributes. Conducted thorough EDA (distributions, correlations, outliers). Applied Label Encoding and One-Hot Encoding based on feature cardinality. Evaluated with RMSE and R².
@@ -62,16 +62,8 @@ Regression task predicting engine size from vehicle attributes. Conducted thorou
 **Key skills:** Regression · Encoding strategies · EDA · Feature selection
 
 
-## 🧠 Perceptron from Scratch
 
-**Tech:** Python · NumPy · Neural Networks Fundamentals
-
-Built a binary classification perceptron entirely from scratch using NumPy, implementing forward propagation, weight updates, and activation logic without ML libraries. Demonstrates the mathematical foundations of neural networks, linear decision boundaries, and gradient-based learning through iterative training and visualisation of convergence behaviour.
-
-**Key skills:** Python · Deep Learning · ANN · Backpropogation
-
-
-## 📈 Time Series Analysis
+## 📈 Time Series Analysis on Sequential Data
 
 **Tech:** Python · Pandas · Matplotlib · Statsmodels
 
