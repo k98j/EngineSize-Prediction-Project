@@ -6,15 +6,44 @@
 A portfolio of end-to-end machine learning projects spanning supervised learning, optimisation theory, and model deployment.
 
 ---
+## 🧬 Dimensionality Reduction with PCA
+**Tech:** Python · Scikit-Learn · NumPy · Matplotlib
 
-## ⚙️ Gradient Descent from Scratch
-**Tech:** Python · NumPy · Optimisation Theory
+Applied Principal Component Analysis (PCA) to reduce high-dimensional feature spaces while preserving maximum variance. Improved model efficiency, removed multicollinearity, and enabled intuitive lower-dimensional data visualization.
 
-Implements batch, stochastic (SGD), and mini-batch gradient descent from first principles using only NumPy — no ML frameworks. Derives and codes analytical gradient computations for MSE loss, demonstrating mastery of the chain rule, learning rate sensitivity, and convergence dynamics. Includes cost-curve visualisations comparing convergence speed and stability across variants.
+Key skills: Dimensionality Reduction · Variance Analysis · Feature Engineering
 
-**Key skills:** Optimisation · Calculus · NumPy · Algorithm implementation from scratch
 
----
+## 🔤 End to End NLP Pipeline (with ML)
+**Tech:** Python · NLTK / spaCy · Scikit-Learn · TF-IDF
+
+Implemented a machine learning NLP pipeline for textual data analysis. Applied text preprocessing (tokenization, stop-word removal, lemmatization), numerical vectorization (TF-IDF/CountVectorizer), and supervised classification algorithms to categorize text.
+
+Key skills: Text Preprocessing · Feature Extraction · Text Classification
+
+
+## 🎯 Feature similarity detection K-Means Clustering
+**Tech:** Python · Scikit-Learn · Seaborn · Matplotlib
+
+Applied unsupervised K-Means clustering to uncover hidden patterns and segment data points based on feature similarity. Utilized the Elbow Method and Silhouette Analysis to determine optimal cluster counts and interpreted business personas from cluster centroids.
+
+Key skills: Unsupervised Learning · Customer Segmentation · Cluster Evaluation
+
+
+## ⚙️ Hyperparameter Optimization using Grid Search CV
+**Tech:** Python · Scikit-Learn · Cross-Validation
+
+Demonstrated systematic hyperparameter optimization using GridSearchCV to optimize model parameters. Evaluated multi-metric scoring across cross-validated folds to prevent overfitting and systematically improve model performance.
+
+Key skills: Hyperparameter Tuning · Cross-Validation · Model Selection
+
+## 🏥 Medicine Insurance Charge Prediction
+**Tech:** Python · Pandas · Seaborn · Scikit-Learn
+
+Built an end-to-end regression model to predict individual medical insurance charges using demographic and lifestyle attributes. Conducted exploratory data analysis (EDA), feature encoding, and log transformations to address skewness and improve predictive accuracy.
+
+Key skills: Exploratory Data Analysis (EDA) · Regression Modeling · Predictive Analytics
+
 
 ## 🚢 Titanic Survival Prediction
 **Tech:** Python · Logistic Regression · EDA · Scikit-Learn
@@ -50,9 +79,3 @@ Performed exploratory and statistical time series analysis on sequential data, i
 
 **Key skills:** Python · Time Series · Statistics
 
-## Descriptions for other interesting projects
-- PCA Dimensionality Reduction — Applied Principal Component Analysis to reduce feature dimensionality while preserving maximum variance for improved visualisation and model efficiency.
-- GridSearchCV — Demonstrated systematic hyperparameter optimisation using GridSearchCV to improve model performance through cross-validated tuning.
-- Insurance Charge Prediction — Built a regression model to predict medical insurance charges using demographic and lifestyle attributes with detailed EDA and feature engineering.
-- NLP with ML — Implemented a traditional machine learning NLP pipeline using text preprocessing, vectorisation, and classification techniques for textual data analysis.
-- K-Means Clustering — Applied unsupervised K-Means clustering to identify hidden patterns and segment data points based on feature similarity.
